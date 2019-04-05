@@ -1,0 +1,23 @@
+.card{
+    width: 450px;
+    margin: auto;
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#list-header{
+    height: 350px;
+    margin: 0;
+    position: relative;
+}
+#header-button{
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+}
+#list-body{
+    text-align: center;
+}
+
