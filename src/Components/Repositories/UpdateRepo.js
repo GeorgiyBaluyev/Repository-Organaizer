@@ -6,12 +6,18 @@ import {updateRepo} from "../../Actions/actions";
 class UpdateRepo extends Component {
     updateRepo = () => {
         const id = +window.location.href.split(':')[window.location.href.split(':').length - 1];
+        let notes;
+        for (let i = 0; i < this.props.repos.length; i++) {
+            if (this.props.repos[i].id === id) {
+                notes = this.props.repos[i].notes
+            }}
         this.props.onUpdateRepo(id, {
             name: this.nameInput.value,
             creatorName: this.creatorNameInput.value,
             stars: this.starsInput.value,
             description: this.descriptionInput.value,
-            id: id
+            id: id,
+            notes: notes
         })
     };
 
@@ -21,14 +27,12 @@ class UpdateRepo extends Component {
         let creatorName;
         let stars;
         let description;
-        let notes;
         for (let i = 0; i < this.props.repos.length; i++) {
             if (this.props.repos[i].id === id) {
                 name = this.props.repos[i].name;
                 creatorName = this.props.repos[i].creatorName;
                 stars = this.props.repos[i].stars;
                 description = this.props.repos[i].description;
-                notes = this.props.repos[i].notes
             }
         }
         console.log(this.props.repos.length);

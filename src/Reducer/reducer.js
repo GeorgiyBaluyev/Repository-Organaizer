@@ -21,6 +21,24 @@ function reducer(state = initialState, action) {
         case 'SET_LOCAL':
              localStorage.setItem('Store',JSON.stringify(action.payload));
              return state;
+        case 'ADD_NOTE':
+            for(let i = 0; i < state.allRepos.length; i++){
+                if(state.allRepos[i].id === action.payload.id){
+                    state.allRepos[i].notes.push(action.payload.note);
+                }
+            }
+            return state;
+        case 'DELETE_NOTE':
+            for(let i = 0; i < state.allRepos.length; i++){
+                if(state.allRepos[i].id === action.payload.idRepo){
+                    for(let j = 0; j < state.allRepos[i].notes.length; j++){
+                        if(state.allRepos[i].notes[j].id === action.payload.idNote){
+                            state.allRepos[i].notes.splice(j,1);
+                        }
+                    }
+                }
+            }
+            return state;
         default:
             return state;
     }

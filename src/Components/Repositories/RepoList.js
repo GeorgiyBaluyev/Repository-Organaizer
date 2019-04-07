@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Repo from './Repo';
 import ListHeader from './ListHeader';
 import connect from "react-redux/es/connect/connect";
-import {setLocal, updateRepo} from "../../Actions/actions";
+import {setLocal} from "../../Actions/actions";
 
 class RepoList extends Component {
     componentDidMount() {

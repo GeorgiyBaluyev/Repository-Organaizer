@@ -4,9 +4,6 @@ import {connect} from 'react-redux';
 import {addRepo} from "../../Actions/actions";
 
 class AddRepo extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     addRepo() {
         const count = this.props.repos.length ? this.props.repos[this.props.repos.length - 1].id + 1 : 0;

@@ -15,7 +15,7 @@ class Repo extends Component {
             <td>{this.props.stars}</td>
             <td>
                 <Link className='btn btn-warning' to={`/updaterepo/:${this.props.id}`}>Update</Link>
-                <Link className='btn btn-primary' to='/'>Details</Link>
+                <Link className='btn btn-primary' to={`/noteslist/:${this.props.id}`}>Details</Link>
                 <button onClick={this.deleteRepo} className='btn btn-danger'>Delete</button>
             </td>
         </tr>);

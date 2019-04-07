@@ -28,9 +28,27 @@ export const updateRepo = (id, repo) => {
     }
 };
 
-export const setLocal = (store)=>{
-    return{
+export const setLocal = (store) => {
+    return {
         type: 'SET_LOCAL',
         payload: store
+    }
+};
+export const addNote = (id, note) => {
+    return {
+        type: 'ADD_NOTE',
+        payload: {
+            id, note: {
+                text: note.text,
+                date: note.date,
+                id: note.id
+            }
+        }
+    }
+};
+export const deleteNote = (idRepo, idNote) =>{
+    return{
+        type: 'DELETE_NOTE',
+        payload : {idRepo, idNote}
     }
 };

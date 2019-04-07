@@ -7,17 +7,46 @@
     flex-direction: column;
     justify-content: space-around;
 }
-#list-header{
+.btn-group-vertical{
+    position: absolute;
+    left: 80%;
+    top: 55px;
+}
+#header-caption{
+    position: absolute;
+    left: 30%;
+    top: 125px;
+}
+#header-name{
+    position: absolute;
+    right: 35px;
+    top: 10px;
+}
+.list-header{
     height: 350px;
     margin: 0;
     position: relative;
 }
-#header-button{
+.header-button-back{
     position: absolute;
-    bottom: 35px;
+    top: 10px;
     left: 35px;
 }
+.header-button{
+     position: absolute;
+     bottom: 35px;
+     left: 35px;
+ }
 #list-body{
     text-align: center;
+}
+#note{
+    width: 75%;
+    margin: 5px auto 5px auto;
+}
+#note-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
