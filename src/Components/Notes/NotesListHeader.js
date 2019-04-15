@@ -12,11 +12,13 @@ class NotesListHeader extends Component {
         let description;
         let name;
         let stars;
+        let source;
         for (let i = 0; i < this.props.repos.length; i++) {
             if (this.props.repos[i].id === this.props.id) {
                 name = this.props.repos[i].name;
                 description = this.props.repos[i].description;
                 stars = this.props.repos[i].stars;
+                source = this.props.repos[i].source;
             }
         }
         return (
@@ -32,11 +34,11 @@ class NotesListHeader extends Component {
                     <h3>{stars}</h3>
                 </div>
                 <div className="btn-group-vertical">
-                    <Link className='btn btn-warning' to={`/updaterepo/:${this.props.id}`}>Update</Link>
-                    <Link onClick={this.deleteRepo} className='btn btn-danger' to="/">Delete</Link>
+                    <Link className={source === 'gitHub' ? 'btn-none' : 'btn btn-warning'} to={`/updaterepo/:${this.props.id}`}>Update</Link>
+                    <Link onClick={this.deleteRepo} className={source === 'gitHub' ? 'btn-none' : 'btn btn-danger'} to="/">Delete</Link>
                 </div>
                 <div className='header-button'>
-                    <Link className="btn btn-primary" to={`/addnote/:${this.props.id}`}>Add Note</Link>
+                    <Link className= "btn btn-primary" to={`/addnote/:${this.props.id}`}>Add Note</Link>
                 </div>
             </div>
         );

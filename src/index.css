@@ -1,52 +1,70 @@
-.card{
+.card {
     width: 450px;
     margin: auto;
 }
+
 .card-body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-.btn-group-vertical{
+
+.btn-group-vertical {
     position: absolute;
     left: 80%;
     top: 55px;
 }
-#header-caption{
+
+#header-caption {
     position: absolute;
     left: 30%;
     top: 125px;
 }
-#header-name{
+
+.btn-none {
+    display: none;
+}
+
+#header-name {
     position: absolute;
     right: 35px;
     top: 10px;
 }
-.list-header{
+
+.list-header {
     height: 350px;
     margin: 0;
     position: relative;
 }
-.header-button-back{
+
+.header-button-back {
     position: absolute;
     top: 10px;
     left: 35px;
 }
-.header-button{
-     position: absolute;
-     bottom: 35px;
-     left: 35px;
- }
-#list-body{
+
+.header-button {
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+}
+
+#list-body {
     text-align: center;
 }
-#note{
+
+#note {
     width: 75%;
     margin: 5px auto 5px auto;
 }
-#note-header{
+
+#note-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.actions {
+    width: 450px;
 }
 

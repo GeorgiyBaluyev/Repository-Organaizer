@@ -6,17 +6,6 @@ import {deleteRepo, addToFavorites, removeFromFavorites} from "../../Actions/act
 
 class Repo extends Component {
 
-
-  /*  componentDidMount(){
-        for(let i = 0; i < this.props.state.favorites.length; i++){
-            if(this.props.id === this.props.state.favorites[i].id){
-                this.setState({
-                    isFavorite: true
-                })
-            }
-        }
-    }*/
-
     handleFavorite = () => {
         const repo = {
             name: this.props.name,
@@ -54,7 +43,7 @@ class Repo extends Component {
                 <button onClick={this.deleteRepo}
                         className={this.props.source === 'gitHub' ? 'btn-none' : 'btn btn-danger'}>Delete
                 </button>
-                <button onClick={this.handleFavorite} className={this.props.favorite ? "btn btn-danger" : "btn btn-primary"}>{this.props.favorite ? `Remove from Favorite` : `Add to favorite`}</button>
+                <button onClick={this.handleFavorite} className="btn btn-danger">Remove from Favorite</button>
             </td>
         </tr>);
     }

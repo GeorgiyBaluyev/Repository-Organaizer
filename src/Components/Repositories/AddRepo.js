@@ -13,7 +13,9 @@ class AddRepo extends Component {
             stars: this.starsInput.value,
             description: this.descriptionInput.value,
             id: count,
-            notes: []
+            notes: [],
+            source: 'manual',
+            favorite: false
         };
         this.props.onAddRepo(repo);
         console.log(this.props.repos);

@@ -7,9 +7,11 @@ class UpdateRepo extends Component {
     updateRepo = () => {
         const id = +window.location.href.split(':')[window.location.href.split(':').length - 1];
         let notes;
+        let favorite;
         for (let i = 0; i < this.props.repos.length; i++) {
             if (this.props.repos[i].id === id) {
-                notes = this.props.repos[i].notes
+                notes = this.props.repos[i].notes;
+                favorite = this.props.repos[i].favorite
             }}
         this.props.onUpdateRepo(id, {
             name: this.nameInput.value,
@@ -17,7 +19,9 @@ class UpdateRepo extends Component {
             stars: this.starsInput.value,
             description: this.descriptionInput.value,
             id: id,
-            notes: notes
+            notes: notes,
+            source: 'manual',
+            favorite: favorite
         })
     };
 

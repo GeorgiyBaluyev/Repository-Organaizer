@@ -1,25 +1,26 @@
 import React, {Component} from 'react';
-import Repo from './Repo';
-import ListHeader from './ListHeader';
-import connect from "react-redux/es/connect/connect";
+import FavoritesHeader from "./FavoritesHeader";
+import FavoriteRepo from "./FavoriteRepo";
 import {setLocal} from "../../Actions/actions";
-import axios from "axios";
+import {connect} from 'react-redux';
 
 
-class RepoList extends Component {
-    componentDidMount() {
-        this.props.onSetLocal(this.props.state);
-        console.log(this.props.state);
-    }
+class FavoritesList extends Component {
+
     componentDidUpdate() {
         this.props.onSetLocal(this.props.state);
     }
+
+
     render() {
-        const array = this.props.state.allRepos.map(repo => <Repo key={repo.id} favorite={repo.favorite} source={repo.source} id={repo.id} stars={repo.stars}
-                                                                  name={repo.name} notes={repo.notes} description={repo.description} creatorName={repo.creatorName}/>);
+        const array = this.props.favorites.map(repo => <FavoriteRepo key={repo.id} id={repo.id} source={repo.source}
+                                                                     favorite={repo.favorite} notes={repo.notes}
+                                                                     name={repo.name} creatorName={repo.creatorName}
+                                                                     description={repo.description}
+                                                                     stars={repo.stars}/>);
         return (
             <div>
-                <ListHeader/>
+                <FavoritesHeader/>
                 <div id={"list-body"}>
                     <table className='table table-hover table-bordered'>
                         <thead className='thead-dark'>
@@ -40,15 +41,19 @@ class RepoList extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+
+const mapStateToProps = state => {
     return {
+        favorites: state.favorites,
         state: state
-    };
-};
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onSetLocal: (store) => dispatch(setLocal(store))
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(RepoList);
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onSetLocal: store => dispatch(setLocal(store))
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FavoritesList);
